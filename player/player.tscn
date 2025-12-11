@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://q5gvsj7bdgow"]
+[gd_scene load_steps=20 format=3 uid="uid://q5gvsj7bdgow"]
 
+[ext_resource type="Script" uid="uid://bbyxkp8k48onn" path="res://player/player.gd" id="1_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://bwjaaulg7wkdw" path="res://player/player_idle.png" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://drxh2vcebudji" path="res://player/player_run.png" id="2_rkbax"]
 
@@ -125,12 +126,12 @@ height = 40.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+script = ExtResource("1_g1dw6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g6k8r")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.22233401
 offset = Vector2(0, -24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
