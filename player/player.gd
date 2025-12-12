@@ -2,14 +2,14 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const GRAVITY: float = 1000.0
-const SPEED: float = 300.0
-const JUMP: float = -300.0
-const JUMP_HORIZONTAL: float = 100.0
+const GRAVITY = 1000
+@export var speed: int = 300
+@export var jump: int = -300
+@export var jump_horizontal: int = 100
 
 enum State { Idle, Run, Jump }
 
-var current_state
+var current_state: State
 
 
 func _ready() -> void:
@@ -40,12 +40,12 @@ func player_run(delta: float) -> void:
 	if !is_on_floor():
 		return
 	
-	var direction = Input.get_axis("move_left", "move_right")
+	var direction = input_movement()
 	
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
 
 	if direction != 0:
 		current_state = State.Run
@@ -54,18 +54,23 @@ func player_run(delta: float) -> void:
 
 func player_jump(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
-		velocity.y = JUMP
+		velocity.y = jump
 		current_state = State.Jump
 	
 	if !is_on_floor() and current_state == State.Jump:
-		var direction = Input.get_axis("move_left", "move_right")
-		velocity.x += direction * JUMP_HORIZONTAL * delta
+		var direction = input_movement()
+		velocity.x += direction * jump_horizontal * delta
 
 
-func player_animations():
+func player_animations() -> void:
 	if current_state == State.Idle:
 		animated_sprite_2d.play("idle")
 	elif current_state == State.Run:
 		animated_sprite_2d.play("run")
 	elif current_state == State.Jump:
 		animated_sprite_2d.play("jump")
+
+
+func input_movement() -> float:
+	var direction: float = Input.get_axis("move_left", "move_right")
+	return direction
