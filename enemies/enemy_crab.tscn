@@ -94,3 +94,9 @@ offset = Vector2(0, -14)
 position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_0krxu")
 debug_color = Color(0.8880244, 0.22061944, 0.6138602, 0.41960785)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
