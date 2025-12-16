@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1i1any5dxbnq"]
+
+[ext_resource type="Texture2D" uid="uid://coudcqyjdkq68" path="res://background/background.png" id="1_j15g2"]
+[ext_resource type="Texture2D" uid="uid://cgub6kadu5ruo" path="res://background/middleground.png" id="2_syxfr"]
+
+[node name="ParallaxBackground" type="Node2D"]
+
+[node name="BackgroundParallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, -189)
+repeat_size = Vector2(240, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax2D"]
+texture = ExtResource("1_j15g2")
+centered = false
+
+[node name="MiddlegroundParallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.9, 1)
+scroll_offset = Vector2(0, -189)
+repeat_size = Vector2(272, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="MiddlegroundParallax2D"]
+texture = ExtResource("2_syxfr")
+centered = false
