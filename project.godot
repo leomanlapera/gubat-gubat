@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Gubat Gubat"
-run/main_scene="uid://l607ohlia62v"
+run/main_scene="uid://oltvqwopda5b"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
@@ -51,4 +55,3 @@ jump={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.44705883, 0.12941177, 0.53333336, 1)

@@ -7,19 +7,21 @@
 
 [node name="BackgroundParallax2D" type="Parallax2D" parent="."]
 scroll_offset = Vector2(0, -189)
-repeat_size = Vector2(240, 0)
-repeat_times = 3
+repeat_size = Vector2(360, 0)
+repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundParallax2D"]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_j15g2")
 centered = false
 
 [node name="MiddlegroundParallax2D" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.9, 1)
 scroll_offset = Vector2(0, -189)
-repeat_size = Vector2(272, 0)
-repeat_times = 3
+repeat_size = Vector2(408, 0)
+repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="MiddlegroundParallax2D"]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_syxfr")
 centered = false
