@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	player_shooting(delta)
 	move_and_slide()
 	player_animations()
-	print("State: ", State.keys()[current_state])
+	#print("State: ", State.keys()[current_state])
 
 
 func player_falling(delta: float) -> void:

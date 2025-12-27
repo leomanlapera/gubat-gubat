@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://oltvqwopda5b"]
+[gd_scene load_steps=11 format=4 uid="uid://oltvqwopda5b"]
 
 [ext_resource type="Texture2D" uid="uid://cnr7sr4r2d8ek" path="res://tileset/game_tilesets_1.png" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://bh4xklur1m1bs" path="res://tileset/game_tilesets_props.png" id="2_61w3m"]
 [ext_resource type="PackedScene" uid="uid://b1i1any5dxbnq" path="res://background/parallax_background.tscn" id="2_jirdo"]
 [ext_resource type="Texture2D" uid="uid://bxxd5e35kpq5x" path="res://tileset/game_tilesets_walls.png" id="3_pdpul"]
 [ext_resource type="PackedScene" uid="uid://q5gvsj7bdgow" path="res://player/player.tscn" id="4_8hd6v"]
+[ext_resource type="PackedScene" uid="uid://bnfdp3rvghqc4" path="res://enemies/enemy_crab.tscn" id="6_btoec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_045es"]
 texture = ExtResource("1_ua5ty")
@@ -292,3 +293,18 @@ limit_top = -304
 limit_right = 2656
 limit_bottom = 0
 editor_draw_limits = true
+
+[node name="Enemies" type="Node2D" parent="."]
+z_index = 3
+
+[node name="EnemyCrab" parent="Enemies" node_paths=PackedStringArray("patrol_points") instance=ExtResource("6_btoec")]
+position = Vector2(472, -40)
+patrol_points = NodePath("PatrolPoints")
+
+[node name="PatrolPoints" type="Node" parent="Enemies/EnemyCrab"]
+
+[node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints"]
+position = Vector2(424, -38)
+
+[node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints"]
+position = Vector2(536, -38)
