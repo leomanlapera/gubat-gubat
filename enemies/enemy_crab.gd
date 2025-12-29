@@ -12,6 +12,7 @@ var enemy_death_effect = preload("uid://cl13c77px4q3w")
 @export var speed: int = 1500
 @export var wait_time: int = 3
 @export var health_amount: int = 3
+@export var damage_amount: int = 1
 
 
 const GRAVITY = 1000

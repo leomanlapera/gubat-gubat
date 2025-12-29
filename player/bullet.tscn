@@ -34,6 +34,7 @@ animations = [{
 radius = 3.0
 
 [node name="Bullet" type="AnimatedSprite2D"]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_42du2")
 animation = &"shoot"
 script = ExtResource("2_j40gx")

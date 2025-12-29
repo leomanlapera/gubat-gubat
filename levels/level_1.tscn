@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://oltvqwopda5b"]
+[gd_scene load_steps=12 format=4 uid="uid://oltvqwopda5b"]
 
 [ext_resource type="Texture2D" uid="uid://cnr7sr4r2d8ek" path="res://tileset/game_tilesets_1.png" id="1_ua5ty"]
 [ext_resource type="Texture2D" uid="uid://bh4xklur1m1bs" path="res://tileset/game_tilesets_props.png" id="2_61w3m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxxd5e35kpq5x" path="res://tileset/game_tilesets_walls.png" id="3_pdpul"]
 [ext_resource type="PackedScene" uid="uid://q5gvsj7bdgow" path="res://player/player.tscn" id="4_8hd6v"]
 [ext_resource type="PackedScene" uid="uid://bnfdp3rvghqc4" path="res://enemies/enemy_crab.tscn" id="6_btoec"]
+[ext_resource type="PackedScene" uid="uid://b6u0yt6dnmqp2" path="res://ui/game_screen.tscn" id="7_gwceb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_045es"]
 texture = ExtResource("1_ua5ty")
@@ -308,3 +309,5 @@ position = Vector2(424, -38)
 
 [node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints"]
 position = Vector2(536, -38)
+
+[node name="GameScreen" parent="." instance=ExtResource("7_gwceb")]
